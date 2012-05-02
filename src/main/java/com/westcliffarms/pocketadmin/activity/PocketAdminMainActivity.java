@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class ListDocumentActivity extends Activity {
+public class PocketAdminMainActivity extends Activity {
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
