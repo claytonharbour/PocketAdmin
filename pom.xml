@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project 
+	xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	>
+	
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.westcliffarms.pocketadmin</groupId>
+    <artifactId>PocketAdmin</artifactId>
+    <version>1.00.00</version>
+    <packaging>apk</packaging>
+    <name>PocketAdmin</name>
+
+	<repositories>
+        <repository>
+        	<id>acra-releases</id>
+        	<url>http://acra.googlecode.com/svn/repository/releases</url>
+    	</repository>
+	</repositories>
+   
+   	<dependencies>
+    	<dependency>
+        	<groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>2.2.1</version>
+            <scope>provided</scope>
+        </dependency>
+    
+    	<dependency>
+    		<groupId>org.roboguice</groupId>
+        	<artifactId>roboguice</artifactId>
+        	<version>1.1</version>
+    	</dependency>
+        
+    	<dependency>
+        	<groupId>com.google.code.guice</groupId>
+            <artifactId>guice</artifactId>
+            <version>2.0-no_aop</version>
+    	</dependency>
+        
+     	<dependency>
+			<groupId>net.sourceforge.htmlcleaner</groupId>
+			<artifactId>htmlcleaner</artifactId>
+			<version>2.2</version>
+        	<exclusions>
+            	<exclusion>
+                	<groupId>org.jdom</groupId>
+                	<artifactId>jdom</artifactId>
+            	</exclusion>
+            	<exclusion>
+                	<groupId>org.apache.ant</groupId>
+                	<artifactId>ant</artifactId>
+            	</exclusion>
+        	</exclusions>
+     	</dependency>
+        
+     	<dependency>
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-api</artifactId>
+         	<version>1.6.1</version>
+         	<scope>provided</scope>
+     	</dependency>
+      
+      	<dependency>
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-android</artifactId>
+        	<version>1.6.1-RC1</version>
+         	<scope>compile</scope>
+     	</dependency>
+     
+      	<dependency>
+        	<groupId>org.acra</groupId>
+        	<artifactId>acra</artifactId>
+        	<version>4.2.3</version>
+        	<scope>compile</scope>
+     	</dependency>
+    
+	</dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>        
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                    <artifactId>android-maven-plugin</artifactId>
+                    <version>3.0.0</version>
+                    <extensions>true</extensions>
+                </plugin>
+                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+                <plugin>
+                	<groupId>org.eclipse.m2e</groupId>
+                	<artifactId>lifecycle-mapping</artifactId>
+                	<version>1.0.0</version>
+                	<configuration>
+                		<lifecycleMappingMetadata>
+                			<pluginExecutions>
+                				<pluginExecution>
+                					<pluginExecutionFilter>
+                						<groupId>
+                							com.jayway.maven.plugins.android.generation2
+                						</groupId>
+                						<artifactId>
+                							android-maven-plugin
+                						</artifactId>
+                						<versionRange>
+                							[3.0.0,)
+                						</versionRange>
+                						<goals>
+                							<goal>proguard</goal>
+                						</goals>
+                					</pluginExecutionFilter>
+                					<action>
+                						<ignore></ignore>
+                					</action>
+                				</pluginExecution>
+                			</pluginExecutions>
+                		</lifecycleMappingMetadata>
+                	</configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <configuration>
+                    <run>
+                        <debug>true</debug>
+                    </run>
+                    <sdk>
+                        <platform>8</platform>
+                    </sdk>
+                    <emulator>
+                        <avd>Telefoon</avd>
+                    </emulator>
+                    <undeployBeforeDeploy>true</undeployBeforeDeploy>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
