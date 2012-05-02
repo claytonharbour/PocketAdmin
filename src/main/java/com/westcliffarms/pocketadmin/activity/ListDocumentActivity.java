@@ -1,3 +1,6 @@
+/*
+ *  Copyright (C) 2012 Clayton Harbour (claytonharbour@gmail.com)
+ */
 package com.westcliffarms.pocketadmin.activity;
 
 import com.westcliffarms.pocketadmin.R;

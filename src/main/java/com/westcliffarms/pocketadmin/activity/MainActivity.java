@@ -1,3 +1,6 @@
+/*
+ *  Copyright (C) 2012 Clayton Harbour (claytonharbour@gmail.com)
+ */
 package com.westcliffarms.pocketadmin.activity;
 
 import com.westcliffarms.pocketadmin.R;
@@ -6,7 +9,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class PocketAdminMainActivity extends Activity {
+public class MainActivity extends Activity {
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
